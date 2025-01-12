@@ -4,6 +4,6 @@ metadata:
   name: upbound-provider-azure-network
 spec:
   package: xpkg.upbound.io/upbound/provider-azure-network:v1.11.0
-  # packagePullPolicy: IfNotPresent # Only download the package if it isn’t in the cache.
-  # revisionActivationPolicy: Automatic # Otherwise our Provider never gets activate & healthy
-  # revisionHistoryLimit: 1
+  packagePullPolicy: IfNotPresent # Only download the package if it isn’t in the cache.
+  revisionActivationPolicy: Automatic # Otherwise our Provider never gets activate & healthy
+  revisionHistoryLimit: 1
