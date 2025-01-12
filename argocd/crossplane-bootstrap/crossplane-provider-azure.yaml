@@ -8,9 +8,9 @@ metadata:
 spec:
   project: default
   source:
-    path: upbound/provider-azure/config
     repoURL: https://github.com/AnasSahel/gitops-crossplane-argocd
     targetRevision: HEAD
+    path: upbound/provider-azure/provider
   destination:
     namespace: default
     server: https://kubernetes.default.svc
