@@ -1,1 +1,4 @@
-azure-credentials.json
+*-credentials.json
+*-creds.json
+
+_local_*
