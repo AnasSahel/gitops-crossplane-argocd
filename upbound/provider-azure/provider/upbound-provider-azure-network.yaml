@@ -1,7 +1,7 @@
 apiVersion: pkg.upbound.io/v1
 kind: Provider
 metadata:
-  name: upbound-provider-azure
+  name: upbound-provider-azure-network
 spec:
   package: xpkg.upbound.io/upbound/provider-azure-network:v1.11.0
   packagePullPolicy: Always
