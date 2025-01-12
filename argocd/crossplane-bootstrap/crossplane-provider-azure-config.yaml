@@ -8,8 +8,8 @@ metadata:
 spec:
   project: default
   source:
-    path: upbound/provider-azure/config
     repoURL: https://github.com/AnasSahel/gitops-crossplane-argocd
+    path: upbound/provider-azure/config
     targetRevision: HEAD
   destination:
     namespace: default
