@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/AnasSahel/gitops-crossplane-argocd
-    path: infrastructure
+    path: infrastructure/azure-vnet
     targetRevision: HEAD
   destination:
     namespace: crossplane-system
