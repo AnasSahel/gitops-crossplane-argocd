@@ -15,11 +15,11 @@ spec:
   project: default
   source:
     repoURL: https://github.com/AnasSahel/gitops-crossplane-argocd
-    targetRevision: HEAD
     path: crossplane
+    targetRevision: HEAD
   destination:
-    server: https://kubernetes.default.svc
     namespace: crossplane-system
+    server: https://kubernetes.default.svc
   syncPolicy:
     automated:
       prune: true    
