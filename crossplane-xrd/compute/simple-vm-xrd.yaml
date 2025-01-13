@@ -1,0 +1,31 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: virtualmachines.compute.trustin.tech
+spec:
+  group: compute.trustin.tech
+  names:
+    kind: VirtualMachine
+    plural: virtualmachines
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+          spec:
+            type: object
+            properties:
+              location:
+                type: string
+                oneOf:
+                  - pattern: '^EU$'
+                  - pattern: '^US$'
+            required:
+              - location
+    served: true
+    referenceable: true
+  claimNames:
+    kind: VirtualMachineClaim
+    plural: virtualmachineclaims
+
