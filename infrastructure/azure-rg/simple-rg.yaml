@@ -4,7 +4,7 @@ metadata:
   name: rg-crossplane-sbx-002
 spec:
   forProvider:
-    location: France Europe
+    location: France Central
     tags:
       created-by: crossplane
       env: sandbox
