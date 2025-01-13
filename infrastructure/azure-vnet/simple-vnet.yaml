@@ -8,6 +8,8 @@ spec:
       - 10.0.0.0/16
       - 11.0.0.0/16
     location: "France Central"
-    resourceGroupName: rg-crossplane-sbx-001
+    # resourceGroupName: rg-crossplane-sbx-001
+    resourceGroupNameRef:
+      name: rg-crossplane-sbx-002
   providerConfigRef:
     name: default
