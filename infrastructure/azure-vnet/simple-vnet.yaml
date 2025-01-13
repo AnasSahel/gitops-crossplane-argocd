@@ -7,6 +7,7 @@ spec:
     addressSpace:
       - 10.0.0.0/16
     location: "France Central"
-    resourceGroupName: rg-crossplane-sbx-001
+    resourceGroupNameRef:
+      name: rg-crossplane-sbx-001
   providerConfigRef:
     name: default
