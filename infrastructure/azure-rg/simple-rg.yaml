@@ -6,7 +6,7 @@ spec:
   forProvider:
     location: France Central
     tags:
-      created-by: crossplane
+      provisioner: crossplane
       env: sandbox
   providerConfigRef:
     name: default
