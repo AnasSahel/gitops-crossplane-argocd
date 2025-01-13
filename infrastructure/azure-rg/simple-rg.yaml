@@ -1,7 +1,7 @@
 apiVersion: azure.upbound.io/v1beta1
 kind: ResourceGroup
 metadata:
-  name: rg-crossplane-sbx-002
+  name: rg-crossplane-sbx-001
 spec:
   forProvider:
     location: France Central
