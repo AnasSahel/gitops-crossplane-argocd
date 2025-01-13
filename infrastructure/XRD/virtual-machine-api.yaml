@@ -1,0 +1,6 @@
+apiVersion: compute.trustin.tech/v1alpha1
+kind: VirtualMachine
+metadata:
+  name: simple-vm
+spec:
+  location: "EU"
