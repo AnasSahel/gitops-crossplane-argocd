@@ -6,6 +6,7 @@ spec:
   forProvider:
     addressSpace:
       - 10.0.0.0/16
+      - 11.0.0.0/16
     location: "France Central"
     resourceGroupNameRef:
       name: rg-crossplane-sbx-001
