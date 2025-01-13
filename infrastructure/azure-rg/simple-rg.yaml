@@ -1,0 +1,12 @@
+apiVersion: azure.upbound.io/v1beta1
+kind: ResourceGroup
+metadata:
+  name: rg-crossplane-sbx-002
+spec:
+  forProvider:
+    location: France Europe
+    tags:
+      created-by: crossplane
+      env: sandbox
+  providerConfigRef:
+    name: default
