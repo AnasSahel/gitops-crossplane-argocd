@@ -16,6 +16,9 @@ spec:
   destination:
     namespace: default
     server: https://kubernetes.default.svc
+  info:
+    - name: 'Google:'
+      value: 'https://google.com'
   syncPolicy:
     automated:
       prune: true
