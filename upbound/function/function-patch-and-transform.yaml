@@ -1,4 +1,4 @@
-apiVersion: pkg.crossplane.io/v1
+apiVersion: pkg.crossplane.io/v1beta1
 kind: Function
 metadata:
   name: function-patch-and-transform
@@ -7,3 +7,10 @@ spec:
   packagePullPolicy: IfNotPresent
   revisionActivationPolicy: Automatic
   revisionHistoryLimit: 1
+
+# apiVersion: functions.pkg.crossplane.io/v1
+# kind: Function
+# metadata:
+#   name: function-patch-and-transform
+# spec:
+#   package: xpkg.upbound.io/crossplane-contrib/function-patch-and-transform:v0.8.0
