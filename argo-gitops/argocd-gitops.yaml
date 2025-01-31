@@ -4,6 +4,8 @@ metadata:
   name: argocd-gitops
   namespace: argocd
 spec:
+  syncPolicy:
+    automated: {}
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
   generators:
