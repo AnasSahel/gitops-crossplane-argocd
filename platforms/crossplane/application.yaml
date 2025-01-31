@@ -10,9 +10,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/AnasSahel/gitops-crossplane-argocd.git
-    targetRevision: HEAD
-    path: platforms/crossplane
+    repoURL: https://charts.crossplane.io/stable
+    targetRevision: 1.18.2
+    chart: crossplane
   destination:
     server: https://kubernetes.default.svc
     namespace: crossplane-system
