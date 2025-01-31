@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base
+
+secretGenerator:
+  - name: gitops-repo
+    namespace: argocd
+    envs:
+      - .gitops-repo.env
+    literals:
+      - name=gitops-repo
+      - type=git
+    options:
+      labels:
+        argocd.argoproj.io/secret-type: repository

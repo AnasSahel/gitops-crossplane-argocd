@@ -9,8 +9,9 @@ patches:
     path: patch-argocd-cm.yaml
 
 resources:
-  - https://raw.githubusercontent.com/argoproj/argo-cd/refs/heads/master/manifests/ha/install.yaml
   - argocd-namespace.yaml
+  - https://raw.githubusercontent.com/argoproj/argo-cd/refs/heads/master/manifests/ha/install.yaml
+  - repo-helm-crossplane.yaml
 
 # Make sure argocd is in the argocd namespace...
 # it seems a workaround, otherwise, it's in the defaul

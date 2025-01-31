@@ -1,5 +1,8 @@
 .DS_Store
 
+.env
+*.env
+
 *-credentials.json
 *-creds.json
 
