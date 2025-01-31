@@ -3,8 +3,6 @@ kind: Kustomization
 
 resources:
   - ../../base
-  - bootstrap-platforms.yaml
-  - bootstrap-apps.yaml
 
 secretGenerator:
   - name: gitops-repo
