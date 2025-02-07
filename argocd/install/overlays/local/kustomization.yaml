@@ -5,13 +5,13 @@ resources:
   - ../../base
 
 secretGenerator:
-  - name: gitops-repo
+  - name: private-repo-main
     namespace: argocd
     envs:
-      - .gitops-repo.env
+      - private-repo-main.env
     literals:
-      - name=gitops-repo
+      - name=gitops-repo-main
       - type=git
     options:
       labels:
-        argocd.argoproj.io/secret-type: repository
+        argocd.argoproj.io/secret-type: repo-creds
