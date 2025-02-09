@@ -4,8 +4,6 @@ kind: ApplicationSet
 metadata:
   name: bootstrap-apps
   namespace: argocd
-  labels:
-    gitops.trustin.tech/platform: "true"
 
 spec:
   goTemplate: true
@@ -19,8 +17,6 @@ spec:
   template:
     metadata:
       name: "app-{{.path.basename}}"
-      labels:
-        gitops.trustin.tech/app: "true"
     spec:
       project: default
       source:
