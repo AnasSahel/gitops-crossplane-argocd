@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+
+metadata:
+  name: bootstrap-apps
+  namespace: argocd
+  labels:
+    gitops.trustin.tech/platform: "true"
+
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+    - git:
+        repoURL: https://github.com/AnasSahel/gitops-crossplane-argocd.git
+        revision: v0.1.0-beta1
+        directories:
+          - path: apps/*
+  template:
+    metadata:
+      name: "app-{{.path.basename}}"
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/AnasSahel/gitops-crossplane-argocd.git
+        targetRevision: v0.1.0-beta1
+        path: "{{.path.path}}"
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: "app-{{.path.basename}}"
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
+        automated:
+          prune: true
+          selfHeal: true
