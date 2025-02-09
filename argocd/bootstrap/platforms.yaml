@@ -13,7 +13,7 @@ spec:
   generators:
     - git:
         repoURL: https://github.com/AnasSahel/gitops-crossplane-argocd.git
-        revision: v0.1.0-beta1
+        revision: HEAD
         directories:
           - path: platforms/*
   template:
@@ -23,7 +23,7 @@ spec:
       project: default
       source:
         repoURL: https://github.com/AnasSahel/gitops-crossplane-argocd.git
-        targetRevision: v0.1.0-beta1
+        targetRevision: HEAD
         path: "{{.path.path}}"
       destination:
         server: https://kubernetes.default.svc
