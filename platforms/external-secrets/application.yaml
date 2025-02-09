@@ -4,6 +4,8 @@ kind: Application
 metadata:
   name: external-secrets
   namespace: argocd
+  labels:
+    gitops.trustin.tech/platform: "true"
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 

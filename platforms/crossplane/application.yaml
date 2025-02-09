@@ -5,7 +5,7 @@ metadata:
   name: crossplane-system
   namespace: argocd
   labels:
-    gitops.trustin.tech/gitops: "true"
+    gitops.trustin.tech/platform: "true"
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 
