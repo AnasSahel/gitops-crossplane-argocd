@@ -4,8 +4,6 @@ kind: Application
 metadata:
   name: crossplane-system
   namespace: argocd
-  labels:
-    gitops.trustin.tech/platform: "true"
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 
