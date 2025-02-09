@@ -17,6 +17,8 @@ spec:
   template:
     metadata:
       name: "platform-{{.path.basename}}"
+      labels:
+        gitops.trustin.tech/platform: "true"
     spec:
       project: default
       source:
