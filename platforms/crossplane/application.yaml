@@ -4,6 +4,8 @@ kind: Application
 metadata:
   name: crossplane-system
   namespace: argocd
+  labels:
+    test: yes
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 
