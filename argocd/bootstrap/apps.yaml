@@ -19,6 +19,8 @@ spec:
   template:
     metadata:
       name: "app-{{.path.basename}}"
+      labels:
+        gitops.trustin.tech/app: "true"
     spec:
       project: default
       source:
