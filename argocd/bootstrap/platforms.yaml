@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 
 metadata:
-  name: platforms
+  name: bootstrap-platforms
   namespace: argocd
 
 spec:
@@ -20,9 +20,9 @@ spec:
     spec:
       project: default
       source:
-        repoURL: { { .spec.source.repoURL } }
-        targetRevision: { { .spec.source.targetRevision } }
-        path: { { .path.path } }
+        repoURL: https://github.com/AnasSahel/gitops-crossplane-argocd.git
+        targetRevision: v0.1.0-beta1
+        path: "{{ .path.path }}"
       destination:
         server: https://kubernetes.default.svc
         namespace: "{{.path.basename}}"
