@@ -10,7 +10,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://charts.crossplane.io/stable
+    repoURL: https://github.com/AnasSahel/gitops-crossplane-argocd.git
     targetRevision: HEAD
     path: argocd/bootstrap
   destination:
