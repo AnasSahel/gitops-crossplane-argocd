@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 
 metadata:
-  name: bootstrap-gitops
+  name: bootstrap
   namespace: argocd
   labels:
     gitops.trustin.tech/type: "bootstrap"
