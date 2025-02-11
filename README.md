@@ -1,44 +1,49 @@
 # GitOps - Crossplane & ArgoCD
 
-The following repository contains a `kustomize` project to:
+The purpose of this repository is to demonstrate GitOps practices using Crossplane and ArgoCD. It provides a streamlined approach to managing cloud infrastructure and Kubernetes resources through GitOps principles.
 
-- Install `ArgoCD`
-- Configure `ArgoCD` to support `Crossplane` by updating the `ConfigMap`
-- Add two `ArgoCD` repos for `Crossplane` and `external-secrets` (ESO)
+## Prerequisites
 
-# Introduction
+- Kubernetes cluster
+- `kubectl` CLI tool
+- Access to a Git repository
+- Basic understanding of GitOps, Crossplane, and ArgoCD
 
-Here are the steps to following to get it running
+## Architecture Overview
 
-## 1. Step 1: ArgoCD
+This setup implements a GitOps workflow where:
 
-Run the following command, where `<env>` is the target environment.
+- ArgoCD manages the deployment and configuration of Crossplane
+- Crossplane handles cloud infrastructure provisioning
+- External Secrets Operator (ESO) manages sensitive information
 
-```bash
-kubectl apply -k argocd/install/overlays/<env>
-```
+# Setup in a local Kubernetes
 
-This command:
-
-- Setups and install `ArgoCD`
-- Adds `Crossplane` helm repository to `ArgoCD`
-- Adds `external-secrets` html repository to `ArgoCD`
-
-## Step 2: Private Repository
-
-If you have a private repository, you need to inject the secret to add it, at least this one to bootstrap the ArgoCD.
+## Install Kind
 
 ```bash
-kubectl create secret generic private-repo-main \
-    --namespace argocd \
-    --from-env-file=.env \
-    --labels=argocd.argoproj.io/secret-type=repo-creds
+# Install Kind
+brew install kind
+
+# Create a local Kubernetes cluster
+kind create cluster --name gitops-01
+
+# Verify the cluster is running
+kubectl cluster-info --context kind-gitops-01
 ```
 
-# Content of .env file should be:
+## 1. Setup the cluster
 
+The following command sets up the cluster with `ArgoCD`, `Crossplane`, and `external-secrets`:
+
+```bash
+kubectl apply -k argocd/install/overlays/local
 ```
-url=<repository-url>
-username=<username>
-password=<personal-access-token>
+
+## 2. Bootstrap the project
+
+The project will be bootstraped following the `app-of-apps` pattern. Make sure to wait until the `CRDs` are created
+
+```bash
+kubectl apply -f argocd/bootstrap-gitops.yaml
 ```
