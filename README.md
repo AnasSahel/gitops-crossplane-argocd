@@ -47,3 +47,7 @@ The project will be bootstraped following the `app-of-apps` pattern. Make sure t
 ```bash
 kubectl apply -f argocd/bootstrap-gitops.yaml
 ```
+
+## 3. (Optional) Private repo
+
+If the `git` repo is private, create an `ArgoCD` repo (I prefer to declare as a `template`)
