@@ -14,22 +14,24 @@ spec:
         revision: dev
         directories:
           - path: platforms/*
+            values:
+              platformNamespace: ns-platform-{{.path.basename}}
 
   template:
     metadata:
       name: "platform-{{.path.basename}}"
-      namespace: "ns-platform-{{.path.basename}}"
+      namespace: "{{.platformNamespace}}"
       finalizers:
         - resources-finalizer.argocd.argoproj.io
     spec:
       project: default
       source:
-        repoURL: "{{.spec.generators.git.repoURL}}"
-        targetRevision: "{{.spec.generators.git.revision}}"
+        repoURL: "https://github.com/AnasSahel/gitops-crossplane-argocd.git"
+        targetRevision: "dev"
         path: "{{.path.path}}"
       destination:
         server: https://kubernetes.default.svc
-        namespace: "{{.metadata.namespace}}"
+        namespace: "{{.platformNamespace}}"
       syncPolicy:
         automated: {}
         syncOptions:
