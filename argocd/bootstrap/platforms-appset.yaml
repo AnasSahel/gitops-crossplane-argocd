@@ -31,13 +31,3 @@ spec:
         automated: {}
         syncOptions:
           - CreateNamespace=true
-
-  # template:
-  #   metadata:
-  #     name: "{{.metadata.name}}"
-  #     namespace: "{{.metadata.namespace}}"
-  #   spec:
-  #     project: default
-  #     source:
-  #       repoURL: "{{.spec.source.repoURL}}"
-  #       targetRevision: "{{.spec.source.targetRevision}}"
