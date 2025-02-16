@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 
 metadata:
-  name: platforms-appset
+  name: platform-crossplane-appset
   namespace: argocd
 
 spec:
@@ -13,13 +13,14 @@ spec:
         repoURL: https://github.com/AnasSahel/gitops-crossplane-argocd.git
         revision: dev
         directories:
-          - path: platforms/*
+          - path: platforms/crossplane/*
         values:
-          platformNamespace: ns-platform-{{.path.basename}}
+          platformNamespace: ns-platform-crossplane-{{.path.basename}}
+          applicationName: platform-crossplane-{{.path.basename}}
 
   template:
     metadata:
-      name: "platform-{{.path.basename}}"
+      name: "{{.values.applicationName}}"
       namespace: "{{.values.platformNamespace}}"
       finalizers:
         - resources-finalizer.argocd.argoproj.io
