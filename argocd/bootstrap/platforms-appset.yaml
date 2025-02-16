@@ -1,0 +1,43 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+
+metadata:
+  name: platforms-appset
+  namespace: argocd
+
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+    - git:
+      repoURL: https://github.com/AnasSahel/gitops-crossplane-argocd.git
+      revision: dev
+      directories:
+        - platforms/*
+
+  template:
+    metadata:
+      name: "platform-{{.path.basename}}"
+      namespace: "ns-platform-{{.path.basename}}"
+    spec:
+      project: default
+      source:
+        repoURL: "{{.spec.source.repoURL}}"
+        targetRevision: "{{.spec.source.targetRevision}}"
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: "{{.metadata.namespace}}"
+      syncPolicy:
+        automated: {}
+        syncOptions:
+          - CreateNamespace=true
+
+  # template:
+  #   metadata:
+  #     name: "{{.metadata.name}}"
+  #     namespace: "{{.metadata.namespace}}"
+  #   spec:
+  #     project: default
+  #     source:
+  #       repoURL: "{{.spec.source.repoURL}}"
+  #       targetRevision: "{{.spec.source.targetRevision}}"
