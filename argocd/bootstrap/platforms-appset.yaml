@@ -13,7 +13,7 @@ spec:
         repoURL: https://github.com/AnasSahel/gitops-crossplane-argocd.git
         revision: dev
         directories:
-          - path: platforms/*
+          - path: platforms/**/*
         values:
           platformNamespace: ns-platform-{{.path.basename}}
 
