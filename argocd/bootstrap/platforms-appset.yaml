@@ -10,10 +10,10 @@ spec:
   goTemplateOptions: ["missingkey=error"]
   generators:
     - git:
-      repoURL: https://github.com/AnasSahel/gitops-crossplane-argocd.git
-      revision: dev
-      directories:
-        - platforms/*
+        repoURL: https://github.com/AnasSahel/gitops-crossplane-argocd.git
+        revision: dev
+        directories:
+          - path: platforms/*
 
   template:
     metadata:
