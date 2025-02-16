@@ -20,7 +20,7 @@ spec:
   template:
     metadata:
       name: "platform-{{.path.basename}}"
-      namespace: "{{.platformNamespace}}"
+      namespace: "{{.values.platformNamespace}}"
       finalizers:
         - resources-finalizer.argocd.argoproj.io
     spec:
@@ -31,7 +31,7 @@ spec:
         path: "{{.path.path}}"
       destination:
         server: https://kubernetes.default.svc
-        namespace: "{{.platformNamespace}}"
+        namespace: "{{.values.platformNamespace}}"
       syncPolicy:
         automated: {}
         syncOptions:
