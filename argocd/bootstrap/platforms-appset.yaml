@@ -24,8 +24,8 @@ spec:
     spec:
       project: default
       source:
-        repoURL: "{{.spec.source.repoURL}}"
-        targetRevision: "{{.spec.source.targetRevision}}"
+        repoURL: "{{.spec.generators.git.repoURL}}"
+        targetRevision: "{{.spec.generators.git.revision}}"
         path: "{{.path.path}}"
       destination:
         server: https://kubernetes.default.svc
