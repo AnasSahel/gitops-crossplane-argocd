@@ -3,8 +3,6 @@ kind: Kustomization
 
 resources:
   - argocd-namespace.yaml
-  - argocd-repo-helm-crossplane.yaml
-  - argocd-repo-helm-external-secrets.yaml
 
 patches:
   - target:
