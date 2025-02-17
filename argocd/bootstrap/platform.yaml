@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+
+metadata:
+  name: appset-platform
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io/background
+
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+    - git:
+        repoURL: https://github.com/AnasSahel/gitops-crossplane-argocd.git
+        revision: HEAD
+        directories:
+          - path: platforms/eso/*
+
+  template:
+    metadata:
+      name: "platform-{{.path.basenameNormalized}}"
+      finalizers:
+        - resources-finalizer.argocd.argoproj.io/background
+    spec:
+      project: default
+      source:
+        repoURL: "https://github.com/AnasSahel/gitops-crossplane-argocd.git"
+        targetRevision: HEAD
+        path: "{{.path.path}}"
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: argocd
