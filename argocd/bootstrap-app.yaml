@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+  name: bootstrap-app
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io/background
+
+spec:
+  source:
+    repoURL: https://github.com/AnasSahel/gitops-crossplane-argocd.git
+    targetRevision: dev
+    path: argocd/bootstrap
+  project: default
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - PrunePropagationPolicy=foreground
+      - PruneLast=true
