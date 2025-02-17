@@ -1,0 +1,21 @@
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+
+metadata:
+  name: crossplane-azure-creds
+  namespace: crossplane-system
+
+spec:
+  refreshInterval: 1h
+  secretStoreRef:
+    kind: SecretStore
+    name: crossplane-secret-store
+
+  target:
+    name: crossplane-azure-provider-secret
+    creationPolicy: Owner
+
+  data:
+    - secretKey: creds
+      remoteRef:
+        key: creds
