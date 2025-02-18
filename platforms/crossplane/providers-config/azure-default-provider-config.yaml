@@ -1,6 +1,6 @@
 apiVersion: azure.upbound.io/v1beta1
 metadata:
-  name: default
+  name: azure-default
 kind: ProviderConfig
 spec:
   credentials:
@@ -8,4 +8,4 @@ spec:
     secretRef:
       namespace: crossplane-system
       name: azure-secret
-      key: creds
+      key: azure-creds
