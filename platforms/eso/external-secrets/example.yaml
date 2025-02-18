@@ -1,16 +1,16 @@
-apiVersion: external-secrets.io/v1beta1
-kind: ExternalSecret
-metadata:
-  name: external-secret-example
-spec:
-  refreshInterval: 1h
-  secretStoreRef:
-    name: secretstore-crossplane
-    kind: SecretStore
-  target:
-    name: secret-to-be-created
-    creationPolicy: Owner
-  data:
-    - secretKey: secret-key-to-be-managed
-      remoteRef:
-        key: provider-key
+# apiVersion: external-secrets.io/v1beta1
+# kind: ExternalSecret
+# metadata:
+#   name: external-secret-example
+# spec:
+#   refreshInterval: 1h
+#   secretStoreRef:
+#     name: secretstore-crossplane
+#     kind: SecretStore
+#   target:
+#     name: secret-to-be-created
+#     creationPolicy: Owner
+#   data:
+#     - secretKey: secret-key-to-be-managed
+#       remoteRef:
+#         key: provider-key
