@@ -3,10 +3,10 @@ kind: Kustomization
 
 resources:
   - argocd-namespace.yaml
-
-patches:
-  - target:
-      version: v1
-      kind: ConfigMap
-      name: argocd-cm
-    path: argocd-cm-patch.yaml
+  - argocd-cm-patch.yaml
+# patches:
+#   - target:
+#       version: v1
+#       kind: ConfigMap
+#       name: argocd-cm
+#     path: argocd-cm-patch.yaml
