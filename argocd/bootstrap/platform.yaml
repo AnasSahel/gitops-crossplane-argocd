@@ -39,3 +39,4 @@ spec:
         syncOptions:
           - PrunePropagationPolicy=foreground
           - PruneLast=true
+          - CreateNamespace=true
