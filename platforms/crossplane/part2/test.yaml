@@ -1,6 +1,0 @@
-apiVersion: compute.trustin.tech/v1alpha1
-kind: VirtualMachine
-metadata:
-  name: my-vm
-spec:
-  location: "EU"
