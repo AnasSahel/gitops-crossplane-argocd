@@ -4,6 +4,6 @@ metadata:
   name: my-namespaced-vm
   namespace: crossplane-test
   annotations:
-    notifications.argoproj.io/subscribe.on-sync-succeeded.teams: channelName
+    notifications.argoproj.io/subscribe.on-sync-succeeded.teams: ArgoCD
 spec:
   location: "EU"
