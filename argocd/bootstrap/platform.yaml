@@ -6,6 +6,8 @@ metadata:
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io/background
+  annotations:
+    notifications.argoproj.io/subscribe.on-app-deleted.teams: channelName
 
 spec:
   goTemplate: true
