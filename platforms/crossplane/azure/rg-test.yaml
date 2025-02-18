@@ -1,7 +1,7 @@
 apiVersion: azure.upbound.io/v1beta1
 kind: ResourceGroup
 metadata:
-  name: example-resources-random
+  name: docs
 spec:
   forProvider:
     location: West Europe
