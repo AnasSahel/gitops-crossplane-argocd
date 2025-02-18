@@ -15,7 +15,7 @@ spec:
     chart: crossplane
   destination:
     server: https://kubernetes.default.svc
-    #namespace: crossplane-system
+    namespace: crossplane-system
   syncPolicy:
     automated: {}
     syncOptions:
