@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: platform-test-configmap
-  namespace: argocd
-
-data:
-  playerName: "anas"

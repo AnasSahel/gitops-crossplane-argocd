@@ -19,7 +19,6 @@ spec:
         directories:
           - path: platforms/eso/*
           - path: platforms/crossplane/*
-          - path: platforms/test/*
 
   template:
     metadata:
