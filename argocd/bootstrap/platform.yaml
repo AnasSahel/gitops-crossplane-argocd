@@ -23,6 +23,8 @@ spec:
       name: "platform-{{index .path.segments 1}}-{{.path.basenameNormalized}}"
       finalizers:
         - resources-finalizer.argocd.argoproj.io/background
+      annotations:
+        notifications.argoproj.io/subscribe.on-sync-succeeded.teams: channelName
     spec:
       project: default
       source:

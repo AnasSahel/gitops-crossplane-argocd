@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - argocd-namespace.yaml
   - argocd-cm-patch.yaml
+  - https://raw.githubusercontent.com/argoproj/argo-cd/stable/notifications_catalog/install.yaml
 # patches:
 #   - target:
 #       version: v1
