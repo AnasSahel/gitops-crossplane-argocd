@@ -16,6 +16,7 @@ spec:
         revision: HEAD
         directories:
           - path: platforms/eso/*
+          - path: platforms/crossplane/*
 
   template:
     metadata:
