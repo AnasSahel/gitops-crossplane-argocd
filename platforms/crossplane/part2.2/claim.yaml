@@ -1,8 +1,0 @@
-apiVersion: compute.trustin.tech/v1alpha1
-kind: VirtualMachineClaim
-metadata:
-  name: my-namespaced-vm
-  namespace: crossplane-test
-
-spec:
-  location: "EU"
