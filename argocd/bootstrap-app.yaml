@@ -5,7 +5,7 @@ metadata:
   name: bootstrap-app
   namespace: argocd
   finalizers:
-    - resources-finalizer.argocd.argoproj.io/background
+    - resources-finalizer.argocd.argoproj.io/foreground
   annotations:
     notifications.argoproj.io/subscribe.on-sync-succeeded.teams: channelName
 

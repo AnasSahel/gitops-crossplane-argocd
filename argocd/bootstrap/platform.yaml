@@ -5,7 +5,7 @@ metadata:
   name: appset-platform
   namespace: argocd
   finalizers:
-    - resources-finalizer.argocd.argoproj.io/background
+    - resources-finalizer.argocd.argoproj.io/foreground
   annotations:
     notifications.argoproj.io/subscribe.on-app-deleted.teams: channelName
 
@@ -24,7 +24,7 @@ spec:
     metadata:
       name: "platform-{{index .path.segments 1}}-{{.path.basenameNormalized}}"
       finalizers:
-        - resources-finalizer.argocd.argoproj.io/background
+        - resources-finalizer.argocd.argoproj.io/foreground
       annotations:
         notifications.argoproj.io/subscribe.on-sync-succeeded.teams: channelName
     spec:
